@@ -978,7 +978,7 @@ button {
   }
   .header__features {
     padding-top: 10px;
-    padding-bottom: 24px;
+    padding-bottom: 12px;
   }
   .header__menu-inner {
     width: 31%;
@@ -1004,8 +1004,8 @@ button {
     height: auto;
   }
   .header__main {
-    margin-top: 188.8px;
-    min-height: calc(100vh - 188.8px);
+    margin-top: 176.8px;
+    min-height: calc(100vh - 176.8px);
     padding-top: 32px;
     position: relative;
   }
@@ -1186,8 +1186,7 @@ button {
   }
   .menu__wrapper{
     
-    transform: translateX(0%);
-    opacity: 1;
+    
   }
   .menu__wrapper.hidden{
     transform: translateX(-100%);
@@ -1196,7 +1195,15 @@ button {
   .header__catalog.header__catalog--visible{
     z-index: 5;
   }
-  
+  .header__catalog{
+    transform: translateX(0%);
+    padding-top: 12px;
+  }
+  .menu__wrapper{
+    padding-top: 12px;
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 @media (max-width: 460px) {
   .header__main-inner {

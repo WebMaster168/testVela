@@ -44,6 +44,8 @@ const links = document.querySelector('.header__links')
 const innerMenu = document.createElement('div')
 const listTitles = document.querySelectorAll('.header__menuList-title')
 
+innerMenu.classList.add('menu__inner', 'hidden')
+catalog.classList.remove('hidden')
 
 link.textContent = 'Каталог'
 
@@ -70,7 +72,7 @@ function toggleMenu(value){
             
             
             if(window.innerWidth < 988){
-                catalog.classList.remove('header__catalog--visible')
+                //catalog.classList.toggle('header__catalog--visible')
                 innerMenu.classList.toggle('hidden')
                 menuBtn.classList.toggle('active')
             }else{
@@ -202,11 +204,12 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         })
         link.addEventListener('click', function(){
             wrapperMenu.classList.add('hidden')
+            menuCatalog.classList.remove('header__inner--active')
             catalog.classList.add('header__catalog--visible')
         })
         
-        menuCatalog.classList.remove('header__inner--active')
-        catalog.classList.remove('header__catalog--visible')
+        
+        //catalog.classList.remove('header__catalog--visible')
     }else{
         if(action === 'prepend'){
             if(!container1.contains(element)){
@@ -238,7 +241,7 @@ window.addEventListener('load', ()=>{
     if(window.innerWidth < 988){
         editElements()
         addClasses()
-        innerMenu.classList.add('menu__inner', 'hidden')
+        
     }{
         //removeClasses()
     }
@@ -251,11 +254,17 @@ window.addEventListener('load', ()=>{
     
 })
 
-let flag = false
+
+
 window.addEventListener('resize', ()=>{
     
-    editElements()
-    addClasses()
+    if(window.innerWidth < 988){
+        editElements()
+        addClasses()
+        
+    }{
+        //removeClasses()
+    }
     moveElement(internationalContainer, infoMobile, international, 'prepend')
     moveElement(phoneContainer, infoMobile, phone,'append', true)
     moveElement(featureTop, bottom, search,'append')
