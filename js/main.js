@@ -109,6 +109,7 @@ function editElements(){
     headerMain.prepend(innerMenu)
 }
 function addClasses(){
+    
     catalog.classList.add('container')
     catalog.classList.remove('header__catalog--visible')
     work.classList.add('header__work--after')

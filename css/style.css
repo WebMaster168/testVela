@@ -1045,11 +1045,11 @@ button {
   }
   .menu__wrapper {
     display: block;
-    position: fixed;
+    position: absolute;
     -webkit-transition: top 0.2s ease-in-out;
     -o-transition: top 0.2s ease-in-out;
     transition: top 0.2s ease-in-out;
-    top: 189px;
+    top: 0px;
     left: 0;
     right: 0;
     background-color: white;
@@ -1058,11 +1058,9 @@ button {
     color: #343A3F;
     font-family: "Maza", sans-serif;
   }
-  .menu__wrapper.hidden {
-    display: block;
-  }
+  
   .menu__wrapper.marginTop {
-    top: 72px;
+    top: 0px;
   }
   .menu__inner.hidden {
     transform: translateX(-100%);
