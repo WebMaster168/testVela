@@ -117,7 +117,7 @@ function addClasses(){
     wrapperMenu.classList.add('menu__wrapper')
     menuTop.classList.add('menu__top', 'container')
     menuTitle.classList.add('menuTitle')
-    innerMenu.classList.add('menu__inner')
+    
     list.classList.add('container')
     link.classList.add('header__item-btn', 'header__item-btn--before')
     linkInner.classList.add('header__item')
@@ -238,9 +238,9 @@ window.addEventListener('load', ()=>{
     if(window.innerWidth < 988){
         editElements()
         addClasses()
-        
+        innerMenu.classList.add('menu__inner', 'hidden')
     }{
-        removeClasses()
+        //removeClasses()
     }
     moveElement(internationalContainer, infoMobile, international, 'prepend')
     moveElement(phoneContainer, infoMobile, phone,'append', true)
@@ -251,15 +251,22 @@ window.addEventListener('load', ()=>{
     
 })
 
-
+let flag = false
 window.addEventListener('resize', ()=>{
-    
+    if(window.innerWidth < 988 && !flag){
+        editElements()
+        addClasses()
+        flag = true
+        innerMenu.classList.add('menu__inner', 'hidden')
+    }{
+        removeClasses()
+    }
     moveElement(internationalContainer, infoMobile, international, 'prepend')
-    //moveElement(phoneContainer, infoMobile, phone,'append', true)
-    //moveElement(featureTop, bottom, search,'append')
-    //moveElement(favourites, menuBtn, btnItem, 'after', true)
-    //moveElement(btnMain, btnContainer, btnClick, 'before', true)
-    //moveElement(featureInner, headerMain, catalog, 'prepend')
+    moveElement(phoneContainer, infoMobile, phone,'append', true)
+    moveElement(featureTop, bottom, search,'append')
+    moveElement(favourites, menuBtn, btnItem, 'after', true)
+    moveElement(btnMain, btnContainer, btnClick, 'before', true)
+    moveElement(featureInner, headerMain, catalog, 'prepend')
     
 })
 
