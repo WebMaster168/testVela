@@ -70,7 +70,7 @@ function toggleMenu(value){
             
             
             if(window.innerWidth < 988){
-                catalog.classList.toggle('header__catalog--visible')
+                catalog.classList.remove('header__catalog--visible')
                 innerMenu.classList.toggle('hidden')
                 menuBtn.classList.toggle('active')
             }else{
@@ -185,6 +185,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         
         menuTitle.addEventListener('click', function(){
             wrapperMenu.classList.remove('hidden')
+            catalog.classList.remove('header__catalog--visible')
         })
         
         listTitles.forEach(item=>{
@@ -204,7 +205,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         })
         
         menuCatalog.classList.remove('header__inner--active')
-        
+        catalog.classList.remove('header__catalog--visible')
     }else{
         if(action === 'prepend'){
             if(!container1.contains(element)){
@@ -232,6 +233,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
 if(window.innerWidth < 988){
     editElements()
     addClasses()
+    
 }{
     removeClasses()
 }
@@ -347,3 +349,4 @@ categoryesBtns.forEach(item=>{
     
     item.addEventListener('click', (e)=>openMenu(e,value,item))
 })
+
