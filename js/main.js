@@ -108,6 +108,20 @@ function editElements(){
     innerMenu.prepend(wrapperMenu)
     headerMain.prepend(innerMenu)
 }
+function addClasses(){
+    catalog.classList.add('container')
+    catalog.classList.remove('header__catalog--visible')
+    work.classList.add('header__work--after')
+    menuInfo.classList.add('menu__info')
+    wrapperMenu.classList.add('menu__wrapper')
+    menuTop.classList.add('menu__top', 'container')
+    menuTitle.classList.add('menuTitle')
+    innerMenu.classList.add('menu__inner', 'hidden')
+    list.classList.add('container')
+    link.classList.add('header__item-btn', 'header__item-btn--before')
+    linkInner.classList.add('header__item')
+    links.classList.add('container')
+}
 function removeClasses(){
     menuInfo.classList.remove('menu__info')
     wrapperMenu.classList.remove('menu__wrapper', 'hidden')
@@ -214,20 +228,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
     
 }
 
-function addClasses(){
-    catalog.classList.add('container')
-    catalog.classList.remove('header__catalog--visible')
-    work.classList.add('header__work--after')
-    menuInfo.classList.add('menu__info')
-    wrapperMenu.classList.add('menu__wrapper')
-    menuTop.classList.add('menu__top', 'container')
-    menuTitle.classList.add('menuTitle')
-    innerMenu.classList.add('menu__inner', 'hidden')
-    list.classList.add('container')
-    link.classList.add('header__item-btn', 'header__item-btn--before')
-    linkInner.classList.add('header__item')
-    links.classList.add('container')
-}
+
 
 
 window.addEventListener('load', initScroll)
@@ -255,7 +256,7 @@ window.addEventListener('resize', ()=>{
 })
 window.addEventListener('scroll', function () {
     
-    if(!isScrolled && window.scrollY > 0){
+    if(!isScrolled && window.scrollY > 45){
         
         isScrolled = true
         info.classList.add('hidden')
