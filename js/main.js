@@ -111,13 +111,13 @@ function editElements(){
 function addClasses(){
     
     catalog.classList.add('container')
-    catalog.classList.remove('header__catalog--visible')
+    //catalog.classList.remove('header__catalog--visible')
     work.classList.add('header__work--after')
     menuInfo.classList.add('menu__info')
     wrapperMenu.classList.add('menu__wrapper')
     menuTop.classList.add('menu__top', 'container')
     menuTitle.classList.add('menuTitle')
-    innerMenu.classList.add('menu__inner', 'hidden')
+    innerMenu.classList.add('menu__inner')
     list.classList.add('container')
     link.classList.add('header__item-btn', 'header__item-btn--before')
     linkInner.classList.add('header__item')
@@ -221,7 +221,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         }else if(action === 'before'){
             container1.before(element)
         }
-        
+       
     }
     
     searchBtn.textContent = window.innerWidth < 461 ? '' : 'Найти'
@@ -231,17 +231,17 @@ function moveElement(container1, container2, element, action, exist, featureTop)
 }
 
 
-if(window.innerWidth < 988){
-    editElements()
-    addClasses()
-    
-}{
-    removeClasses()
-}
+
 
 window.addEventListener('load', initScroll)
 window.addEventListener('load', ()=>{
-    
+    if(window.innerWidth < 988){
+        editElements()
+        addClasses()
+        
+    }{
+        removeClasses()
+    }
     moveElement(internationalContainer, infoMobile, international, 'prepend')
     moveElement(phoneContainer, infoMobile, phone,'append', true)
     moveElement(featureTop, bottom, search,'append')
@@ -252,7 +252,16 @@ window.addEventListener('load', ()=>{
 })
 
 
-
+window.addEventListener('resize', ()=>{
+    
+    moveElement(internationalContainer, infoMobile, international, 'prepend')
+    //moveElement(phoneContainer, infoMobile, phone,'append', true)
+    //moveElement(featureTop, bottom, search,'append')
+    //moveElement(favourites, menuBtn, btnItem, 'after', true)
+    //moveElement(btnMain, btnContainer, btnClick, 'before', true)
+    //moveElement(featureInner, headerMain, catalog, 'prepend')
+    
+})
 
 window.addEventListener('scroll', function () {
     
@@ -342,4 +351,3 @@ categoryesBtns.forEach(item=>{
     
     item.addEventListener('click', (e)=>openMenu(e,value,item))
 })
-
