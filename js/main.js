@@ -181,7 +181,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         }
         addClasses()
         menuTitle.textContent = 'Каталог'
-        editElements()
+        
         
         menuTitle.addEventListener('click', function(){
             wrapperMenu.classList.remove('hidden')
@@ -219,7 +219,7 @@ function moveElement(container1, container2, element, action, exist, featureTop)
         }else if(action === 'before'){
             container1.before(element)
         }
-        removeClasses()
+        
     }
     
     searchBtn.textContent = window.innerWidth < 461 ? '' : 'Найти'
@@ -229,7 +229,12 @@ function moveElement(container1, container2, element, action, exist, featureTop)
 }
 
 
-
+if(window.innerWidth < 988){
+    editElements()
+    addClasses()
+}{
+    removeClasses()
+}
 
 window.addEventListener('load', initScroll)
 window.addEventListener('load', ()=>{
