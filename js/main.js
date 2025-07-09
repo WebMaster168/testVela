@@ -253,14 +253,9 @@ window.addEventListener('load', ()=>{
 
 let flag = false
 window.addEventListener('resize', ()=>{
-    if(window.innerWidth < 988 && !flag){
-        editElements()
-        addClasses()
-        flag = true
-        innerMenu.classList.add('menu__inner', 'hidden')
-    }{
-        removeClasses()
-    }
+    
+    editElements()
+    addClasses()
     moveElement(internationalContainer, infoMobile, international, 'prepend')
     moveElement(phoneContainer, infoMobile, phone,'append', true)
     moveElement(featureTop, bottom, search,'append')
