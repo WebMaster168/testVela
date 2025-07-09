@@ -253,18 +253,10 @@ window.addEventListener('load', ()=>{
 
 
 
-window.addEventListener('resize', ()=>{
-    moveElement(internationalContainer, infoMobile, international, 'prepend')
-    console.log(featureInner, headerMain, catalog)
-    moveElement(phoneContainer, infoMobile, phone,'append', true)
-    moveElement(featureTop, bottom, search,'append')
-    moveElement(favourites, menuBtn, btnItem, 'after', true)
-    moveElement(btnMain, btnContainer, btnClick, 'before', true)
-    moveElement(featureInner, headerMain, catalog, 'prepend')
-})
+
 window.addEventListener('scroll', function () {
     
-    if(!isScrolled && window.scrollY > 45){
+    if(!isScrolled && window.scrollY > 65){
         
         isScrolled = true
         info.classList.add('hidden')
@@ -279,7 +271,7 @@ window.addEventListener('scroll', function () {
             feature.style.marginTop = '-6px'
             featureTop.style.transform = 'translateY(0px)'
             search.classList.add('hidden')
-            wrapperMenu.classList.add('marginTop')
+            
             setTimeout(() => {
                 bottom.style.display = 'none'
             }, 100);
